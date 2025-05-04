@@ -1,21 +1,49 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStore } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import About from "~/components/About";
+import LocationPage from "~/components/Location";
+import Navbar from "~/components/Navbar";
+import ProductPage from "~/components/ProductPage";
 
 export default component$(() => {
+  const state = useStore({
+    activeSection: 'products', 
+  });
+
   return (
     <>
-      <h1>Hi 👋</h1>
+      <Navbar 
+        activeSection={state.activeSection}
+        onNavChange$={(section) => {
+          state.activeSection = section;
+        }}
+      />
+      
       <div>
-        Can't wait to see what you build with qwik!
-        <br />
-        Happy coding.
+        {state.activeSection === 'products' && (
+          <div>
+            <ProductPage /> 
+          </div>
+        )}
+        
+        {state.activeSection === 'location' && (
+          <div>
+            <LocationPage />
+          </div>
+        )}
+        
+        {state.activeSection === 'about' && (
+          <div>
+            <About />
+          </div>
+        )}
       </div>
     </>
   );
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "Tiar Abon Ikan Tongkol",
   meta: [
     {
       name: "description",
