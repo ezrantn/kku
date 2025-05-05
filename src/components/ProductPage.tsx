@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 const ProductPage = component$(() => {
     return (
         <section id="products" class="py-16">
-            <h2 class="text-center text-3xl mb-12">Produk Kami</h2>
+            <h2 class="text-center text-4xl mb-6 font-semibold">Produk Kami</h2>
             <div class="flex justify-center items-center flex-wrap gap-8">
                 <div class="w-full sm:w-1/2 md:w-1/3">
                     <ProductCard

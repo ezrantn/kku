@@ -70,7 +70,7 @@ export default component$(() => {
 
   return (
     <section class="py-16 px-4">
-      <h2 class="text-center text-3xl font-semibold mb-6">Lokasi Kami</h2>
+      <h2 class="text-center text-4xl font-semibold mb-6">Lokasi Kami</h2>
       
       <div class="map-container" ref={mapContainerRef}></div>
       

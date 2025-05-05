@@ -8,7 +8,7 @@ interface NavbarProps {
 
 const Navbar = component$<NavbarProps>(({ activeSection = 'products', onNavChange$ }) => {
   return (
-    <nav class="bg-gray-800 py-4 px-6 shadow-lg">
+    <nav class="bg-black py-4 px-6 shadow-lg">
       <div class="max-w-6xl mx-auto flex justify-between items-center">
         <div class="flex-shrink-0">
           <h1 class="text-2xl font-bold text-white">Tiar Abon Ikan Tongkol</h1>
