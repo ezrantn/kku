@@ -1,4 +1,4 @@
-import { component$, useVisibleTask$, useSignal, useStylesScoped$ } from "@builder.io/qwik";
+import { component$, useSignal, useStylesScoped$, useTask$ } from "@builder.io/qwik";
 
 export default component$(() => {
   const mapContainerRef = useSignal<Element>();
@@ -25,7 +25,7 @@ export default component$(() => {
     }
   `);
 
-  useVisibleTask$(({ track }) => {
+  useTask$(({ track }) => {
     track(() => mapContainerRef.value);
     
     if (mapContainerRef.value && !mapInitialized.value) {
